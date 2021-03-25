@@ -1,4 +1,4 @@
-import { CalendarOutline, EyeOutline, TagOutline } from 'heroicons-react'
+import { CalendarOutline, TagOutline } from 'heroicons-react'
 import Link from 'next/link'
 import { Post } from '../pages/index'
 import { formatSlug } from '../utils/slugFormat'
@@ -20,10 +20,6 @@ const PostCard = ({ post }: { post: Post }) => {
           <div className="flex items-center space-x-1">
             <CalendarOutline size={16} />
             <span className="flex-shrink-0">{new Date(post.date).toLocaleDateString()}</span>
-          </div>
-          <div className="flex items-center space-x-1">
-            <EyeOutline size={16} />
-            <span>{post.views}</span>
           </div>
           {post.author.map(author => (
             <div key={author.id} className="flex items-center space-x-1 flex-shrink-0">
